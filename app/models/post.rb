@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: "User", foreign_key: "author_id", required: true
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id', required: true
   has_many :comment
   has_many :like
 
@@ -9,6 +9,6 @@ class Post < ApplicationRecord
   end
 
   def recent_comments
-    self.comment.order(created_at: :desc).limit(5)
+    comment.order(created_at: :desc).limit(5)
   end
 end
