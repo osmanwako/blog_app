@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :like
 
   def update_posts_counters
-    authors = Post.where(author: self)
+    authors = Post.where(author_id:)
     author.update(posts_counter: authors.count)
   end
 
