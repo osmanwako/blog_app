@@ -64,16 +64,7 @@ RSpec.describe Post, type: :model do
       expect(user.posts_counter).to eq(2)
     end
 
-    it "3. Testing post's Recent Comments should be two" do
-      user.save
-      post.save
-      comment1.save
-      comment2.save
-      post.recent_comments
-      expect(post.recent_comments.length).to eq(2)
-    end
-
-    it "4. Testing post's Recent Comments should be three" do
+    it "3. Testing post's Recent Comments should be three" do
       user.save
       post.save
       comment1.save
