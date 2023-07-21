@@ -46,7 +46,6 @@
 - **[# Post Model]**
 - **[# Comment Model]**
 - **[# Like Model]**
-- **[# Image Mode]**
 - **[# Schema]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
