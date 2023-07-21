@@ -118,7 +118,10 @@ rspec spec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **[Create Data Model]**
+- **[Add Devise]**
+- **[Add authorization rules]**
+- **[Integration specs for Views]**
+- **[Add API endpoints]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
