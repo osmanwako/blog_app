@@ -21,28 +21,29 @@
 }
 
 .list-desc {
-  flex-basis: 1;
   flex-grow: 1;
   height: 60px;
   padding-bottom: 0;
 }
 
 .list-content {
-  flex-basis: 1;
   flex-grow: 1;
 }
+
 .name-title a {
   font-weight: bold;
   font-size: 22px;
   text-decoration: none;
   color: #000;
 }
+
 .post-title a {
   font-weight: bold;
   font-size: 17px;
   text-decoration: none;
   color: #000;
 }
+
 .profile_img {
   width: 50px;
   height: 50px;
@@ -54,6 +55,7 @@
   font-size: 14px;
   color: blue;
 }
+
 .post-details {
   display: flex;
   justify-content: space-between;
