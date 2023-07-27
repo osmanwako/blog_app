@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag("user") %>
+<div class="container">
+<ul class="unorder-list">
+    <li class="list-items list-profile">
+    <%= image_tag("profile/avator.png", class: "profile_img") %>
+    </li>
+    <li class="list-items list-desc">
+    <p class="name-title"><%= link_to @user.name, @user %></p>
+     <p class="quantity">Number of post
+     <%= @user.posts_counter %>
+     </p>
+    </li>
+</ul>
+<% @user.posts.each do |post| %>
+    <ul class="unorder-list">
+    <li class="list-items list-content">
+    <p class="post-title"><%= link_to post.title, [@user, post] %></p>
+    <p class="name-title"><%= post.text %></p>
+    <p class="quantity">
+     comments:<%= post.comments_counter %>
+     Likes:<%= post.likes_counter %>
+     </p>
+    </li>
+    </ul>
+    <ul class="unorder-list">
+    <li class="list-items list-content">
+<% post.comments.each do |comment| %>
+    <p class="name-title">
+    <%= @user.name %> : <%= comment.text %> </p>
+      <% end %>
+      </li>
+</ul>
+<br>
+<% end %>
+</div>

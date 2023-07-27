@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag("user") %>
+<div class="container">
+  <% @users.each do |user| %>
+<ul class="unorder-list">
+    <li class="list-items list-profile">
+    <%= image_tag("profile/avator.png", class: "profile_img") %>
+    </li>
+    <li class="list-items list-desc">
+    <p class="name-title"><%= link_to user.name, user %></p>
+     <p class="quantity">Number of post
+     <%= user.posts_counter %>
+     </p>
+    </li>
+</ul>
+  <% end %>
+</div>

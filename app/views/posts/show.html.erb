@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag("user") %>
+<div class="container">
+    <ul class="unorder-list">
+    <li class="list-items list-content">
+    <div class="post-details">
+    <p class="post-title"> <%= @post.title %></p>
+    <p class="quantity">
+     comments:<%= @post.comments_counter %>
+     Likes:<%= @post.likes_counter %>
+     </p>
+    </div>
+    <p class="name-title"><%= @post.text %></p>
+    </li>
+    </ul>
+    <ul class="unorder-list">
+    <li class="list-items list-content">
+<% @post.comments.each do |comment| %>
+    <p class="name-title">
+    <%= @user.name %> : <%= comment.text %> </p>
+      <% end %>
+      </li>
+</ul>
+</div>
