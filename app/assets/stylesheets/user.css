@@ -61,3 +61,25 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.expand-link {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 768px;
+}
+
+.see-more {
+  cursor: pointer;
+  padding: 8px;
+  background-color: transparent;
+  border: #000 0.5px solid;
+}
+
+.see-more a {
+  display: block;
+  width: 100%;
+  color: #000;
+  text-decoration: none;
+}

@@ -97,10 +97,6 @@ To run tests, run the following command:
 rspec spec
 ```
 
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- N/A
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -3,25 +3,23 @@
     <ul class="unorder-list">
     <li class="list-items list-content">
     <div class="post-details">
-    <p class="post-title"> Laravel</p>
+    <p class="post-title"> <%= @post.title %></p>
     <p class="quantity">
-     comments:4
-     Likes:2
+     comments:<%= @post.comments_counter %>
+     Likes:<%= @post.likes_counter %>
      </p>
     </div>
-    <p class="name-title">Hi Laravel</p>
+    <p class="name-title"><%= @post.text %></p>
     </li>
     </ul>
+    <% if (@post.comments.length > 0) %>
     <ul class="unorder-list">
     <li class="list-items list-content">
+<% @post.comments.each do |comment| %>
     <p class="name-title">
-    Osman : good luck </p>
-    <p class="name-title">
-    Osman : Hi I am Rails </p>
-    <p class="name-title">
-    Osman : Hi I am Laravel </p>
-    <p class="name-title">
-    Osman : Hi I am React </p>
+    <%= @user.name %> : <%= comment.text %> </p>
+      <% end %>
       </li>
 </ul>
+<% end %>
 </div>
