@@ -1,0 +1,54 @@
+.container {
+  padding: 10px 4%;
+}
+
+.form-container {
+  margin: 1px auto;
+  max-width: 768px;
+  min-height: 248px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #fafafa;
+}
+
+.form-header {
+  padding-left: 25px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+form {
+  padding: 20px;
+}
+
+.form-input * {
+  color: #666;
+  padding: 0.75em;
+  height: auto;
+  width: 100%;
+  box-shadow: none;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+  margin-bottom: 20px;
+}
+
+.form-label * {
+  color: #666;
+  width: 100%;
+  font-weight: bold;
+}
+
+.add-comment {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+div .add-comment {
+  float: right;
+  border: #666 1px solid;
+}

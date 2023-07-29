@@ -15,11 +15,24 @@
     <% if (@post.comments.length > 0) %>
     <ul class="unorder-list">
     <li class="list-items list-content">
-<% @post.comments.each do |comment| %>
-    <p class="name-title">
-    <%= @user.name %> : <%= comment.text %> </p>
-      <% end %>
-      </li>
-</ul>
-<% end %>
+     <% @post.comments.each do |comment| %>
+      <p class="name-title">
+      <%= @user.name %> : <%= comment.text %> </p>
+     <% end %>
+     </li>
+   </ul>
+ <% end %>
+<%= form_with model: [@user, @post, @comment] do |form| %>
+  <div class="post_comment">
+       <div class="input-comment">
+       <%= form.text_field :text %>
+       </div>
+      <div class="submit-comment">
+       <%= form.submit "Comment" %>
+       <%= link_to "Like", user_post_likes_path(@user, @post) %>
+       </div>
+       </div>
+  <% end %>
 </div>
+
+
