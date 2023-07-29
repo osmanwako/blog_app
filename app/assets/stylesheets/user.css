@@ -101,9 +101,11 @@ form {
 .submit-comment {
   flex-grow: 0;
 }
+
 .input-comment {
   flex-grow: 1;
 }
+
 .input-comment input {
   color: #666;
   padding: 0.75em;
@@ -121,6 +123,7 @@ form {
   border-radius: 5px;
   border: none;
 }
+
 .submit-comment a {
   display: inline-block;
   background-color: #4caf50;

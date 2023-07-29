@@ -1,6 +1,7 @@
 .container {
   padding: 10px 4%;
 }
+
 .form-container {
   margin: 1px auto;
   max-width: 768px;
@@ -32,19 +33,22 @@ form {
   transition: all 0.2s linear;
   margin-bottom: 20px;
 }
+
 .form-label * {
   color: #666;
   width: 100%;
   font-weight: bold;
 }
-div .add-comment {
-  float: right;
-  border: #666 1px solid;
-}
+
 .add-comment {
   background-color: #4caf50;
   color: white;
   padding: 12px 20px;
   border-radius: 5px;
   border: none;
+}
+
+div .add-comment {
+  float: right;
+  border: #666 1px solid;
 }
