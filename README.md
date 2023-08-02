@@ -108,6 +108,11 @@ rspec spec
 - Twitter: [@osmanWakow](https://twitter.com/osmanwakow)
 - LinkedIn :[@osmanWako](https://www.linkedin.com/in/osmanwako/)
 
+👤 **Nana Vanina**
+- GitHub: [@vanina123](https://github.com/vanina123)
+- Twitter: [@DUfevan](https://twitter.com/DufeVanina)
+- LinkedIn: [Vanina](https://www.linkedin.com/in/larissa-vanina/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
