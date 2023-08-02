@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def start
+    redirect_to new_user_post_path(current_user)
+  end
+
   def index
     @users = User.includes(:posts, :comments, :likes).all
     unless (@users.exists?)
