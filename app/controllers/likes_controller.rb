@@ -7,6 +7,6 @@ class LikesController < ApplicationController
       @like.save
       @like.update_likes_counters
     end
-    redirect_to user_post_url(current_user, @post)
+    redirect_to user_post_url(@post.user, @post)
   end
 end

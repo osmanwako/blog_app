@@ -2,7 +2,7 @@
 <div class="container">
 <ul class="unorder-list">
     <li class="list-items list-profile">
-    <%= image_tag("profile/avator.png", class: "profile_img") %>
+    <%= image_tag("profile/#{@user.photo}", class: "profile_img") %>
     </li>
     <li class="list-items list-desc">
     <p class="name-title"><%= link_to @user.name, @user %></p>
@@ -17,18 +17,17 @@
     <h3 class="post-title"><%= link_to post.title, [@user, post] %></h3>
     <p class="name-title"><%= post.text %></p>
     <p class="quantity">
-     comments:<%= post.comments_counter %>
-     Likes:<%= post.likes_counter %>
+     comments:<span><%= post.comments_counter %></span>
+     Likes:<span><%= post.likes_counter %></span>
      </p>
     </li>
     </ul>
-    <% if (post.recent_comments.length > 0) %>
+    <% if (post.comments.first) %>
     <ul class="unorder-list">
     <li class="list-items list-content">
-<% post.recent_comments.each do |comment| %>
     <p class="name-title">
-    <%= @user.name %> : <%= comment.text %> </p>
-      <% end %>
+    <%= post.comments.first.user.name %> : 
+    <span><%= post.comments.first.text %><span> </p>
       </li>
 </ul>
 <% end %>
