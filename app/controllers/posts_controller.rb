@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
+    @user = User.includes(:posts, :comments, :likes).find(params[:user_id])
   end
 
   def show
-    @user = User.find(params[:user_id])
+    @user = User.includes(:posts, :comments, :likes).find(params[:user_id])
     @post = @user.posts.find(params[:id])
     @comment = Comment.new
   end
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post = Post.create(author: current_user, title: post[:title], text: post[:text])
     @post.save
     @post.update_posts_counters
-    redirect_to user_post_url(@user, @post)
+    redirect_to user_post_url(@post.user, @post)
   end
 
   private

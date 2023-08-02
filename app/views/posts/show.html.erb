@@ -3,10 +3,12 @@
     <ul class="unorder-list">
     <li class="list-items list-content">
     <div class="post-details">
-    <p class="post-title"> <%= @post.title %></p>
+    <p class="post-title"> 
+    <strong><%= @post.title %></strong> by
+    <strong><%= @user.name %></strong></p>
     <p class="quantity">
-     comments:<%= @post.comments_counter %>
-     Likes:<%= @post.likes_counter %>
+     comments:<span><%= @post.comments_counter %></span>
+     Likes:<span><%= @post.likes_counter %></span>
      </p>
     </div>
     <p class="name-title"><%= @post.text %></p>
@@ -17,7 +19,8 @@
     <li class="list-items list-content">
      <% @post.comments.each do |comment| %>
       <p class="name-title">
-      <%= @user.name %> : <%= comment.text %> </p>
+      <span><%= comment.user.name %> </span>:
+      <span><%= comment.text %> </span></p>
      <% end %>
      </li>
    </ul>

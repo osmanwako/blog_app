@@ -6,12 +6,12 @@
 #
 one:
   name: Osman
-  bio: Lecture at JIT
-  photo: ""
-# column: value
-#
+  photo: avator.png
+  bio: MyText
+  posts_counter: 1
+
 two:
   name: Vanina
-  bio: Lecture at MIT
-  photo: ""
-# column: value
+  photo: avator.png
+  bio: MyText
+  posts_counter: 1

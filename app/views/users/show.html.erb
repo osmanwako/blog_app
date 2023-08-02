@@ -20,7 +20,7 @@
 <% @posts.each do |post| %>
     <ul class="unorder-list">
     <li class="list-items list-content">
-    <h3 class="post-title"><%= post.title %></h3>
+    <h3 class="post-title"><%= link_to post.title, user_post_path(@user, post) %></h3>
     <p class="name-title"><%= post.text %></p>
     <p class="quantity">
      comments:<%= post.comments_counter %>
@@ -30,7 +30,7 @@
     </ul>
       <% end %>
       <div class="expand-link">
-      <button type="button", class="see-more"             %>
+      <button type="button", class="see-more"                 %>
       <%= link_to "See all Posts", user_posts_path(@user) %>
       </button>
       </div>
