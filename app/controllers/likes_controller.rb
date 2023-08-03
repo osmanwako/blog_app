@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @post = Post.includes(:comments, :likes).find(params[:post_id])
     @likes = Like.where(user: current_user, post: @post).first

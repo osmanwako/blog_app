@@ -1,16 +1,11 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def start
-    redirect_to new_user_post_path(current_user)
+    redirect_to users_path
   end
 
   def index
-    @users = User.includes(:posts, :comments, :likes).all
-    return if @users.exists?
-
-    @one = User.create(name: 'Osman', bio: 'Lecturer at JIT', photo: '')
-    @one.save
-    @two = User.create(name: 'Vanina', bio: 'Lecturer at MIT', photo: '')
-    @two.save
     @users = User.includes(:posts, :comments, :likes).all
   end
 
