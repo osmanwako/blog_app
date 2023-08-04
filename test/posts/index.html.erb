@@ -2,7 +2,7 @@
 <div class="container">
 <ul class="unorder-list">
     <li class="list-items list-profile">
-    <%= image_tag("profile/avator.png", class: "profile_img") %>
+    <%= image_tag("profile/#{@user.photo}", class: "profile_img") %>
     </li>
     <li class="list-items list-desc">
     <p class="name-title"><%= link_to @user.name, @user %></p>

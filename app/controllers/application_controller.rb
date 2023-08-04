@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
-  def current_user
-    @user = User.includes(:posts, :comments, :likes).last
-    if @user.nil?
-      @user = User.create(name: 'Osman', bio: 'Lecturer at JIT', photo: '')
-      @user.save
-      @user = User.create(name: 'Vanina', bio: 'Lecturer at MIT', photo: '')
-      @user.save
-    end
-    @user
+  before_action :authenticate_user!, :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    attributes = %i[name photo bio]
+    devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
+    devise_parameter_sanitizer.permit(:account_update, keys: attributes)
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email_confirmation])
   end
 end

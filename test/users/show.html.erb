@@ -11,31 +11,27 @@
      </p>
     </li>
 </ul>
+<ul class="unorder-list">
+    <li class="list-items list-content">
+    <h3>Bio</h3>
+    <p class="name-title"><%= @user.bio %></p>
+    </li>
+</ul>
 <% @posts.each do |post| %>
     <ul class="unorder-list">
     <li class="list-items list-content">
     <h3 class="post-title"><%= link_to post.title, user_post_path(@user, post) %></h3>
     <p class="name-title"><%= post.text %></p>
     <p class="quantity">
-     comments:<span><%= post.comments_counter %></span>
-     Likes:<span><%= post.likes_counter %></span>
+     comments:<%= post.comments_counter %>
+     Likes:<%= post.likes_counter %>
      </p>
     </li>
     </ul>
-    <% if (post.comments.first) %>
-    <ul class="unorder-list">
-    <li class="list-items list-content">
-    <p class="name-title">
-    <%= post.comments.first.user.name %> : 
-    <span><%= post.comments.first.text %><span> </p>
-      </li>
-</ul>
-<% end %>
-<br>
-<% end %>
-<div class="expand-link">
-      <button type="button" class="see-more">
-      <%= link_to "Pagination", user_posts_path(@user) %>
+      <% end %>
+      <div class="expand-link">
+      <button type="button", class="see-more"                 %>
+      <%= link_to "See all Posts", user_posts_path(@user) %>
       </button>
       </div>
 </div>

@@ -1,0 +1,41 @@
+<%= stylesheet_link_tag("user") %>
+<div class="container">
+    <ul class="unorder-list">
+    <li class="list-items list-content">
+    <div class="post-details">
+    <p class="post-title"> 
+    <strong><%= @post.title %></strong> by
+    <strong><%= @user.name %></strong></p>
+    <p class="quantity">
+     comments:<span><%= @post.comments_counter %></span>
+     Likes:<span><%= @post.likes_counter %></span>
+     </p>
+    </div>
+    <p class="name-title"><%= @post.text %></p>
+    </li>
+    </ul>
+    <% if (@post.comments.length > 0) %>
+    <ul class="unorder-list">
+    <li class="list-items list-content">
+     <% @post.comments.each do |comment| %>
+      <p class="name-title">
+      <span><%= comment.user.name %> </span>:
+      <span><%= comment.text %> </span></p>
+     <% end %>
+     </li>
+   </ul>
+ <% end %>
+<%= form_with model: [@user, @post, @comment] do |form| %>
+  <div class="post_comment">
+       <div class="input-comment">
+       <%= form.text_field :text %>
+       </div>
+      <div class="submit-comment">
+       <%= form.submit "Comment" %>
+       <%= link_to "Like", user_post_likes_path(@user, @post) %>
+       </div>
+       </div>
+  <% end %>
+</div>
+
+
