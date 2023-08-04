@@ -1,13 +1,13 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @user = User.includes(:posts, :comments, :likes).find(params[:user_id])
+    @user = User.includes(:posts, :comments, :likes).find_by(id:params[:user_id])
     @posts = @user.posts.includes(:comments, :likes)
   end
 
   def show
-    @user = User.includes(:posts, :comments, :likes).find(params[:user_id])
-    @post = @user.posts.find(params[:id])
+    @user = User.includes(:posts, :comments, :likes).find(id:params[:user_id])
+    @post = @user.posts.find_by(params[:id])
     @comment = Comment.new
   end
 
