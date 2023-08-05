@@ -15,6 +15,12 @@
   <div class="actions">
     <%= f.submit "Log in", class: "btn-action" %>
   </div>
+  <% if notice || alert %>
+  <div class="field">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  </div>
+<% end %>
 <% end %>
 <div class="field field-link">
 <%= render "devise/shared/links" %>
