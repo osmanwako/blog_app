@@ -12,13 +12,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    
     @user = User.includes(:posts, :comments, :likes).find_by(id: params[:id])
     @posts = if @user
                @user.recent_posts
              else
                []
              end
-             render json :@user
+    render json :@user
   end
 end
