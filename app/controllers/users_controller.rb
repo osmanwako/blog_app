@@ -12,10 +12,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.includes(:posts, :comments, :likes).find_by(id: params[:id])
-    unless @user
-      @posts = []
-    else
-      @posts = @user.recent_posts
-    end
+    @posts = if @user
+               @user.recent_posts
+             else
+               []
+             end
   end
 end

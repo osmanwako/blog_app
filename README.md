@@ -109,6 +109,7 @@ rspec spec
 - LinkedIn :[@osmanWako](https://www.linkedin.com/in/osmanwako/)
 
 👤 **Nana Vanina**
+
 - GitHub: [@vanina123](https://github.com/vanina123)
 - Twitter: [@DUfevan](https://twitter.com/DufeVanina)
 - LinkedIn: [Vanina](https://www.linkedin.com/in/larissa-vanina/)
@@ -119,9 +120,6 @@ rspec spec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **[Add Devise]**
-- **[Add authorization rules]**
-- **[Integration specs for Views]**
 - **[Add API endpoints]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
