@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :photo
       t.text :bio
       t.integer :posts_counter, default: 0
+      t.string :role, default: "admin"
       t.string :email, null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :reset_password_token
@@ -13,8 +14,8 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :confirmation_token
       t.datetime :confirmed_at
       t.datetime :confirmation_sent_at
-      t.string :unconfirmed_email 
-      
+      t.string :unconfirmed_email
+
       t.timestamps
     end
     add_index :users, :email, unique: true

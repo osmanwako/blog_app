@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def start
+    p current_user
     redirect_to users_path
   end
 
@@ -10,7 +11,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:posts, :comments, :likes).find(params[:id])
-    @posts = @user.recent_posts
+    @user = User.includes(:posts, :comments, :likes).find_by(id: params[:id])
+    @posts = if @user
+               @user.recent_posts
+             else
+               []
+             end
   end
 end

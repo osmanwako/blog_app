@@ -11,19 +11,34 @@
      Likes:<span><%= @post.likes_counter %></span>
      </p>
     </div>
-    <p class="name-title"><%= @post.text %></p>
+    <p class="post-content"><%= @post.text %></p>
+    <% if can? :destroy, @post %>
+    <%= form_tag user_post_path(@post.author, @post), method: :delete do %>
+      <div class="form-destroy">
+      <%= submit_tag("Delete", class: "btn-destroy") %>
+      </div>
+    <% end %>
+    <% end %>
     </li>
     </ul>
     <% if (@post.comments.length > 0) %>
-    <ul class="unorder-list">
-    <li class="list-items list-content">
      <% @post.comments.each do |comment| %>
-      <p class="name-title">
-      <span><%= comment.user.name %> </span>:
-      <span><%= comment.text %> </span></p>
-     <% end %>
-     </li>
+      <ul class="unorder-list">
+    <li class="list-items list-content list-comments">
+      <%= form_tag user_post_comment_path(@post.author, @post, comment), method: :delete do %>
+        <div>
+        <span><%= comment.user.name %> </span>:
+        <span><%= comment.text %> </span>
+        </div>
+      <% if can? :destroy, comment %>
+        <div class="comment-delete">
+        <%= submit_tag("Delete", class: "btn-destroy") %>
+        </div>
+      <% end %>
+      <% end %>
+      </li>
    </ul>
+  <% end %>
  <% end %>
 <%= form_with model: [@user, @post, @comment] do |form| %>
   <div class="post_comment">

@@ -19,16 +19,44 @@
   box-sizing: border-box;
 }
 
-.horizon a {
+.horizon {
+  display: flex;
+  padding: 10px;
+  border-top: #20538d 1px solid;
+}
+
+.btn-signout {
   margin-left: 10px;
-  border-radius: 4px;
   border: solid 1px #20538d;
+  border-radius: 4px;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.4),
-    0 1px 1px rgba(0, 0, 0, 0.2);
   background: #4479ba;
   color: #fff;
   padding: 8px 12px;
+}
+
+.list-comments form {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-destroy {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-destroy {
+  background-color: #f00e0e;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+  text-align: center;
   text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 }
