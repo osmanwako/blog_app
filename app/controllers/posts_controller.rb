@@ -5,17 +5,20 @@ class PostsController < ApplicationController
   def index
     @user = User.includes(:posts, :comments, :likes).find_by(id: params[:user_id])
     @posts = @user.posts.includes(:comments, :likes)
+    render json :@user
   end
 
   def show
     @user = User.includes(:posts, :comments, :likes).find_by(id: params[:user_id])
     @post = @user.posts.find(params[:id])
     @comment = Comment.new
+    render json :@user
   end
 
   def new
     @user = current_user
     @post = Post.new
+    render json :@post
   end
 
   def create
@@ -24,6 +27,7 @@ class PostsController < ApplicationController
     @post.save
     @post.update_posts_counters
     redirect_to user_post_path(current_user, @post)
+    render json :@post
   end
 
   def destroy
