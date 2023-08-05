@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.includes(:posts, :comments, :likes).all
-    render json :@users
   end
 
   def show
@@ -18,6 +17,5 @@ class UsersController < ApplicationController
              else
                []
              end
-    render json :@user
   end
 end

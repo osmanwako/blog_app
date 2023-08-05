@@ -17,7 +17,7 @@ module Api
         user = User.find(params[:user_id])
         post = user.posts.find(params[:post_id])
         comment = post.comments.build(comment_params)
-        comment.author = user
+        comment.user = user
 
         if comment.save
           render json: comment, status: :created

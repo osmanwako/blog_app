@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
     @comment = Comment.create(user: current_user, post:, text: message[:text])
     @comment.save
     @comment.update_comments_counters
-    # render json: @comment
     redirect_to user_post_url(current_user, post)
   end
 
